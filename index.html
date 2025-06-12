@@ -11,12 +11,8 @@
 </head>
 <body>
     <div class="noise"></div>
-    <div class="theme-toggle">
-        <i class="fas fa-moon"></i>
-    </div>
     <div class="container">
         <nav class="nav">
-          
             <div class="logo">Dhilip Kumar R</div>
             <ul class="nav-links">
                 <li><a href="#home" class="nav-link">Home</a></li>
@@ -34,7 +30,12 @@
             </div>
         </nav>
 
-        <section id="home" class="hero">
+        <section id="home" class="hero" style="position: relative; overflow: hidden;">
+            <div class="animated-background" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -1;">
+                <div class="gradient-sphere" style="position: absolute; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%); border-radius: 50%; animation: float 6s ease-in-out infinite;"></div>
+                <div class="gradient-sphere" style="position: absolute; width: 200px; height: 200px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%); border-radius: 50%; animation: float 8s ease-in-out infinite; animation-delay: 1s;"></div>
+                <div class="gradient-sphere" style="position: absolute; width: 150px; height: 150px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%); border-radius: 50%; animation: float 7s ease-in-out infinite; animation-delay: 2s;"></div>
+            </div>
             <div class="hero-content">
                 <div class="intro-text">
                     <h1 class="glitch" data-text="Hi, I'm">Hi, I'm</h1>
@@ -282,69 +283,47 @@
             <div class="project-categories">
                 <div class="category">
                     <h3 class="category-title">Frontend Development</h3>
-                    <div class="project-grid">
-                        <div class="project-card">
-                            <div class="project-image"></div>
-                            <div class="project-info">
-                                <h3>Modern E-commerce Platform</h3>
-                                <p>A fully responsive e-commerce platform with advanced filtering, real-time cart updates, and seamless checkout experience.</p>
-                                <div class="tech-stack">
-                                    <span>React</span>
-                                    <span>Redux Toolkit</span>
-                                    <span>Styled Components</span>
-                                    <span>Stripe</span>
-                                </div>
-                                <div class="project-metrics">
-                                    <span>98% Lighthouse Score</span>
-                                    <span>2s Load Time</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="#" class="btn">Live Demo</a>
-                                    <a href="#" class="btn">GitHub</a>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="project-card">
-                            <div class="project-image" style="background-image: url('https://i.postimg.cc/rwx9p1sr/image.png'); background-size: cover; background-position: center;"></div>
-                            <div class="project-info">
-                                <h3>Floral Globe Elegance</h3>
-                                <p>A beautiful and elegant e-commerce platform for floral arrangements with modern design and seamless user experience.</p>
-                                <div class="tech-stack">
-                                    <span>React</span>
-                                    <span>Tailwind CSS</span>
-                                    <span>Node.js</span>
-                                    <span>MongoDB</span>
-                                </div>
-                                <div class="project-metrics">
-                                    <span>Responsive Design</span>
-                                    <span>Modern UI/UX</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://floral-globe-elegance.lovable.app/" target="_blank" class="btn">Live Demo</a>
-                                    <a href="https://github.com/Dhilipkumar-max/floral-globe-elegance" target="_blank" class="btn">GitHub</a>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="project-card">
-                            <div class="project-image" style="background-image: url('https://i.postimg.cc/FKCxX5jp/image.png'); background-size: cover; background-position: center;"></div>
-                            <div class="project-info">
+                    <div class="project-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; padding: 1rem;">
+                        <div class="project-card" style="width: 100%; max-width: 100%; margin: 0 auto;">
+                            <div class="project-image" style="background-image: url('https://i.postimg.cc/FKCxX5jp/image.png'); background-size: cover; background-position: center; height: 200px; border-radius: 8px 8px 0 0;"></div>
+                            <div class="project-info" style="padding: 1.5rem;">
                                 <h3>Expense Tracker Pro</h3>
                                 <p>A modern expense tracking application with real-time updates, data visualization, and intuitive user interface for managing personal finances.</p>
-                                <div class="tech-stack">
+                                <div class="tech-stack" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0;">
                                     <span>React</span>
                                     <span>Convex</span>
                                     <span>Tailwind CSS</span>
                                     <span>Chart.js</span>
                                 </div>
-                                <div class="project-metrics">
+                                <div class="project-metrics" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0;">
                                     <span>Real-time Updates</span>
                                     <span>Responsive Design</span>
                                 </div>
-                                <div class="project-links">
+                                <div class="project-links" style="display: flex; gap: 1rem; margin-top: 1rem;">
                                     <a href="https://neat-crane-172.convex.app/" target="_blank" class="btn">Live Demo</a>
                                     <a href="https://github.com/Dhilipkumar-max/Expanse_Tracker/tree/main" target="_blank" class="btn">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card" style="width: 100%; max-width: 100%; margin: 0 auto;">
+                            <div class="project-image" style="background-image: url('https://i.postimg.cc/rwx9p1sr/image.png'); background-size: cover; background-position: center; height: 200px; border-radius: 8px 8px 0 0;"></div>
+                            <div class="project-info" style="padding: 1.5rem;">
+                                <h3>Floral Globe Elegance</h3>
+                                <p>A beautiful and elegant e-commerce platform for floral arrangements with modern design and seamless user experience.</p>
+                                <div class="tech-stack" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0;">
+                                    <span>React</span>
+                                    <span>Tailwind CSS</span>
+                                    <span>Node.js</span>
+                                    <span>MongoDB</span>
+                                </div>
+                                <div class="project-metrics" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0;">
+                                    <span>Responsive Design</span>
+                                    <span>Modern UI/UX</span>
+                                </div>
+                                <div class="project-links" style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                    <a href="https://floral-globe-elegance.lovable.app/" target="_blank" class="btn">Live Demo</a>
+                                    <a href="https://github.com/Dhilipkumar-max/floral-globe-elegance" target="_blank" class="btn">GitHub</a>
                                 </div>
                             </div>
                         </div>
@@ -353,57 +332,57 @@
 
                 <div class="category">
                     <h3 class="category-title">AI & Machine Learning</h3>
-                    <div class="project-grid">
-                        <div class="project-card">
-                            <div class="project-image ai-bg"></div>
-                            <div class="project-info">
+                    <div class="project-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; padding: 1rem;">
+                        <div class="project-card" style="width: 100%; max-width: 100%; margin: 0 auto;">
+                            <div class="project-image ai-bg" style="height: 200px; border-radius: 8px 8px 0 0; background: linear-gradient(45deg, #2a2a72 0%, #009ffd 74%);"></div>
+                            <div class="project-info" style="padding: 1.5rem;">
                                 <h3>AI-Powered Disease Prediction System</h3>
                                 <p>Machine learning model for early disease diagnosis using symptoms and medical history. Achieved 92% accuracy in disease prediction across 50+ conditions.</p>
-                                <div class="tech-stack">
+                                <div class="tech-stack" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0;">
                                     <span>TensorFlow</span>
                                     <span>Scikit-Learn</span>
                                     <span>React</span>
                                     <span>Flask</span>
                                     <span>PostgreSQL</span>
                                 </div>
-                                <div class="project-links">
+                                <div class="project-links" style="display: flex; gap: 1rem; margin-top: 1rem;">
                                     <a href="#" class="btn">View Live</a>
                                     <a href="#" class="btn">GitHub</a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="project-card">
-                            <div class="project-image ai-bg"></div>
-                            <div class="project-info">
+                        <div class="project-card" style="width: 100%; max-width: 100%; margin: 0 auto;">
+                            <div class="project-image ai-bg" style="height: 200px; border-radius: 8px 8px 0 0; background: linear-gradient(45deg, #2a2a72 0%, #009ffd 74%);"></div>
+                            <div class="project-info" style="padding: 1.5rem;">
                                 <h3>Smart Agriculture System</h3>
                                 <p>AI-powered farming assistant with soil analysis and plant disease detection. Increased crop yield by 35% through optimized farming practices.</p>
-                                <div class="tech-stack">
+                                <div class="tech-stack" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0;">
                                     <span>TensorFlow</span>
                                     <span>React Native</span>
                                     <span>Node.js</span>
                                     <span>Firebase</span>
                                 </div>
-                                <div class="project-links">
+                                <div class="project-links" style="display: flex; gap: 1rem; margin-top: 1rem;">
                                     <a href="#" class="btn">View Live</a>
                                     <a href="#" class="btn">GitHub</a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="project-card">
-                            <div class="project-image ai-bg"></div>
-                            <div class="project-info">
+                        <div class="project-card" style="width: 100%; max-width: 100%; margin: 0 auto;">
+                            <div class="project-image ai-bg" style="height: 200px; border-radius: 8px 8px 0 0; background: linear-gradient(45deg, #2a2a72 0%, #009ffd 74%);"></div>
+                            <div class="project-info" style="padding: 1.5rem;">
                                 <h3>Women's Safety AI App</h3>
                                 <p>Emergency safety app with voice detection and real-time alerts. Processed 10,000+ voice samples with 95% accuracy in danger detection.</p>
-                                <div class="tech-stack">
+                                <div class="tech-stack" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0;">
                                     <span>Google Speech API</span>
                                     <span>NLTK</span>
                                     <span>React Native</span>
                                     <span>Firebase</span>
                                     <span>Twilio</span>
                                 </div>
-                                <div class="project-links">
+                                <div class="project-links" style="display: flex; gap: 1rem; margin-top: 1rem;">
                                     <a href="#" class="btn">View Live</a>
                                     <a href="#" class="btn">GitHub</a>
                                 </div>
@@ -450,36 +429,36 @@
     <script src="script.js"></script>
 
     <!-- Add new section after About -->
-    <section id="process" class="process">
-        <h2>How I Work</h2>
-        <div class="process-grid">
-            <div class="process-item">
-                <div class="process-icon">
+    <section id="process" class="process animate-on-scroll fade-in-section">
+        <h2 class="gradient-text animate-fade-in slide-in-top">How I Work</h2>
+        <div class="process-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; padding: 2rem;">
+            <div class="process-item animate-slide-up fade-in-element" style="animation-delay: 0.2s;">
+                <div class="process-icon gradient-bg scale-in">
                     <i class="fas fa-pencil-ruler"></i>
                 </div>
-                <h3>1. Design</h3>
-                <p>Converting requirements into pixel-perfect, responsive designs</p>
+                <h3 class="gradient-text slide-in-right">1. Design</h3>
+                <p class="fade-in">Converting requirements into pixel-perfect, responsive designs</p>
             </div>
-            <div class="process-item">
-                <div class="process-icon">
+            <div class="process-item animate-slide-up fade-in-element" style="animation-delay: 0.4s;">
+                <div class="process-icon gradient-bg scale-in">
                     <i class="fas fa-code"></i>
                 </div>
-                <h3>2. Develop</h3>
-                <p>Building scalable frontend architecture with modern frameworks</p>
+                <h3 class="gradient-text slide-in-right">2. Develop</h3>
+                <p class="fade-in">Building scalable frontend architecture with modern frameworks</p>
             </div>
-            <div class="process-item">
-                <div class="process-icon">
+            <div class="process-item animate-slide-up fade-in-element" style="animation-delay: 0.6s;">
+                <div class="process-icon gradient-bg scale-in">
                     <i class="fas fa-mobile-alt"></i>
                 </div>
-                <h3>3. Responsive</h3>
-                <p>Ensuring perfect display across all devices</p>
+                <h3 class="gradient-text slide-in-right">3. Responsive</h3>
+                <p class="fade-in">Ensuring perfect display across all devices</p>
             </div>
-            <div class="process-item">
-                <div class="process-icon">
+            <div class="process-item animate-slide-up fade-in-element" style="animation-delay: 0.8s;">
+                <div class="process-icon gradient-bg scale-in">
                     <i class="fas fa-tachometer-alt"></i>
                 </div>
-                <h3>4. Optimize</h3>
-                <p>Performance optimization for the best user experience</p>
+                <h3 class="gradient-text slide-in-right">4. Optimize</h3>
+                <p class="fade-in">Performance optimization for the best user experience</p>
             </div>
         </div>
     </section>
@@ -609,3 +588,61 @@
         </div>
     </section>
 </section>
+
+<style>
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+    }
+
+    .gradient-text {
+        background: linear-gradient(45deg, #2a2a72 0%, #009ffd 74%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: gradient 3s ease infinite;
+    }
+
+    @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .gradient-bg {
+        background: linear-gradient(45deg, #2a2a72 0%, #009ffd 74%);
+        animation: gradient 3s ease infinite;
+    }
+
+    .process-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        color: white;
+    }
+
+    .process-item {
+        text-align: center;
+        padding: 2rem;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        transition: transform 0.3s ease;
+    }
+
+    .process-item:hover {
+        transform: translateY(-10px);
+    }
+
+    /* Fix for mobile menu links visibility */
+    .nav-links.active .nav-link {
+        opacity: 1 !important;
+        transform: translateX(0) !important;
+        transition: opacity 0.3s, transform 0.3s;
+    }
+</style>
