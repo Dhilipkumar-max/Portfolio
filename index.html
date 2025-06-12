@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Add Lottie for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.13/lottie.min.js"></script>
+</head>
+<body>
+    <div class="noise"></div>
+    <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </div>
+    <div class="container">
+        <nav class="nav">
+          
+            <div class="logo">Dhilip Kumar R</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="#contact" class="btn primary hire-me">Hire Me</a>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="intro-text">
+                    <h1 class="glitch" data-text="Hi, I'm">Hi, I'm</h1>
+                    <h2 class="name">Dhilip Kumar R</h2>
+                </div>
+                <div class="typing-container">
+                    <span class="typing-text"></span>
+                    <span class="cursor"></span>
+                </div>
+                <p class="hero-bio">Frontend Developer specializing in building exceptional digital experiences with modern web technologies.</p>
+                <div class="tech-stack">
+                    <div class="tech-icon" data-tooltip="React">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="tech-icon" data-tooltip="JavaScript">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <div class="tech-icon" data-tooltip="HTML5">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <div class="tech-icon" data-tooltip="CSS3">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <div class="tech-icon" data-tooltip="Vue.js">
+                        <i class="fab fa-vuejs"></i>
+                    </div>
+                </div>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn primary pulse">View My Work</a>
+                    <a href="#" class="btn secondary" download>Download Resume</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-shapes">
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                </div>
+                <div id="lottie-animation" class="lottie-container"></div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hey there! 👋 I'm Dhilip Kumar R, a passionate Computer Science Engineering student with a deep interest in Machine Learning, Web Development, and Software Engineering.</p>
+                    <p>I love building AI-powered applications, interactive websites, and innovative projects that solve real-world problems. Currently, I'm working on:</p>
+                    <div class="achievements">
+                        <div class="achievement">
+                            <i class="fas fa-robot"></i>
+                            <p>🚀 AI-Powered Agriculture App – Uses computer vision for plant disease detection</p>
+                        </div>
+                        <div class="achievement">
+                            <i class="fas fa-fire"></i>
+                            <p>🔥 Fire Safety Training Game – Interactive AI-based learning experience</p>
+                        </div>
+                        <div class="achievement">
+                            <i class="fas fa-pills"></i>
+                            <p>💊 Medicine Chatbot – NLP-powered medical assistant</p>
+                        </div>
+                        <div class="achievement fun-fact">
+                            <i class="fas fa-lightbulb"></i>
+                            <p>I build AI models for fun and automate daily tasks!</p>
+                        </div>
+                    </div>
+                    <p class="about-conclusion">I'm always eager to learn new technologies, contribute to open-source projects, and prepare for high-paying roles at top companies.</p>
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <h4>Frontend</h4>
+                            <div class="skills">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>React.js</span>
+                                <span>Flutter</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Backend</h4>
+                            <div class="skills">
+                                <span>Node.js</span>
+                                <span>Flask</span>
+                                <span>Django</span>
+                                <span>Python</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>AI/ML</h4>
+                            <div class="skills">
+                                <span>TensorFlow</span>
+                                <span>PyTorch</span>
+                                <span>OpenAI API</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Databases</h4>
+                            <div class="skills">
+                                <span>MySQL</span>
+                                <span>MongoDB</span>
+                                <span>Firebase</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>DevOps/Cloud</h4>
+                            <div class="skills">
+                                <span>Docker</span>
+                                <span>Kubernetes</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Problem-Solving</h4>
+                            <div class="skills">
+                                <span>Data Structures</span>
+                                <span>Algorithms</span>
+                                <span>System Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <div class="circular-progress">
+                            <svg viewBox="0 0 36 36">
+                                <path d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            </svg>
+                            <span class="percentage">50+</span>
+                        </div>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat">
+                        <div class="circular-progress">
+                            <svg viewBox="0 0 36 36">
+                                <path d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            </svg>
+                            <span class="percentage">500+</span>
+                        </div>
+                        <p>GitHub Stars</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <h2>Skills & Technologies</h2>
+            <div class="section-description">
+                <p>Expertise in Google/Microsoft Tier Technologies</p>
+            </div>
+            <div class="skills-container">
+                <!-- Skills will be dynamically populated -->
+            </div>
+        </section>
+
+        <section id="ai-expertise" class="ai-expertise">
+            <h2>🤖 AI Tools Specialist</h2>
+            <div class="section-description">
+                <p>Specialized in cutting-edge AI frameworks, APIs, and automation tools</p>
+            </div>
+            <div class="ai-grid">
+                <div class="ai-category">
+                    <h3>AI Frameworks</h3>
+                    <div class="ai-tools">
+                        <span>TensorFlow</span>
+                        <span>PyTorch</span>
+                        <span>Hugging Face</span>
+                    </div>
+                </div>
+                <div class="ai-category">
+                    <h3>Generative AI</h3>
+                    <div class="ai-tools">
+                        <span>GPT-4</span>
+                        <span>LangChain</span>
+                        <span>Llama 2</span>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="certifications animate-on-scroll fade-in-section">
+            <h2 class="animate-fade-in slide-in-top">Certifications & Achievements</h2>
+            <div class="section-description animate-fade-in slide-in-top" style="animation-delay: 0.2s;">
+                <p>Industry-recognized certifications and technical achievements</p>
+            </div>
+            <div class="certifications-container">
+                <div class="certification-card animate-slide-up fade-in-element" style="animation-delay: 0.3s;">
+                    <div class="certification-icon gradient-bg scale-in">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="certification-info">
+                        <h3 class="gradient-text slide-in-right">AI Centre for Fire Safety Project</h3>
+                        <p class="fade-in">Certificate in AI-based Fire Safety Training System Development</p>
+                        <span class="certification-date fade-in">2024</span>
+                    </div>
+                </div>
+
+                <div class="certification-card animate-slide-up fade-in-element" style="animation-delay: 0.5s;">
+                    <div class="certification-icon gradient-bg scale-in">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="certification-info">
+                        <h3 class="gradient-text slide-in-right">EduNet Green AI Internship</h3>
+                        <p class="fade-in">6-week intensive internship in AI and Green Technology</p>
+                        <span class="certification-date fade-in">2024</span>
+                    </div>
+                </div>
+
+                <div class="certification-card animate-slide-up fade-in-element" style="animation-delay: 0.7s;">
+                    <div class="certification-icon gradient-bg scale-in">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <div class="certification-info">
+                        <h3 class="gradient-text slide-in-right">Microsoft Internship</h3>
+                        <p class="fade-in">6-week intensive internship organized by EduNet</p>
+                        <span class="certification-date fade-in">2024</span>
+                    </div>
+                </div>
+
+                <div class="certification-card animate-slide-up fade-in-element" style="animation-delay: 0.9s;">
+                    <div class="certification-icon gradient-bg scale-in">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="certification-info">
+                        <h3 class="gradient-text slide-in-right">CSC Course Certification</h3>
+                        <p class="fade-in">2-year comprehensive course covering:</p>
+                        <ul class="skills-list">
+                            <li class="gradient-text fade-in-element" style="animation-delay: 1.1s;">MySQL Database Management</li>
+                            <li class="gradient-text fade-in-element" style="animation-delay: 1.2s;">Microsoft Excel</li>
+                            <li class="gradient-text fade-in-element" style="animation-delay: 1.3s;">MS Office Tools</li>
+                            <li class="gradient-text fade-in-element" style="animation-delay: 1.4s;">Python Programming</li>
+                            <li class="gradient-text fade-in-element" style="animation-delay: 1.5s;">C Programming</li>
+                        </ul>
+                        <span class="certification-date fade-in">2022-2024</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2>Featured Projects</h2>
+            <div class="project-categories">
+                <div class="category">
+                    <h3 class="category-title">Frontend Development</h3>
+                    <div class="project-grid">
+                        <div class="project-card">
+                            <div class="project-image"></div>
+                            <div class="project-info">
+                                <h3>Modern E-commerce Platform</h3>
+                                <p>A fully responsive e-commerce platform with advanced filtering, real-time cart updates, and seamless checkout experience.</p>
+                                <div class="tech-stack">
+                                    <span>React</span>
+                                    <span>Redux Toolkit</span>
+                                    <span>Styled Components</span>
+                                    <span>Stripe</span>
+                                </div>
+                                <div class="project-metrics">
+                                    <span>98% Lighthouse Score</span>
+                                    <span>2s Load Time</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="btn">Live Demo</a>
+                                    <a href="#" class="btn">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="project-card">
+                            <div class="project-image" style="background-image: url('https://i.postimg.cc/rwx9p1sr/image.png'); background-size: cover; background-position: center;"></div>
+                            <div class="project-info">
+                                <h3>Floral Globe Elegance</h3>
+                                <p>A beautiful and elegant e-commerce platform for floral arrangements with modern design and seamless user experience.</p>
+                                <div class="tech-stack">
+                                    <span>React</span>
+                                    <span>Tailwind CSS</span>
+                                    <span>Node.js</span>
+                                    <span>MongoDB</span>
+                                </div>
+                                <div class="project-metrics">
+                                    <span>Responsive Design</span>
+                                    <span>Modern UI/UX</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://floral-globe-elegance.lovable.app/" target="_blank" class="btn">Live Demo</a>
+                                    <a href="https://github.com/Dhilipkumar-max/floral-globe-elegance" target="_blank" class="btn">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="project-card">
+                            <div class="project-image" style="background-image: url('https://i.postimg.cc/FKCxX5jp/image.png'); background-size: cover; background-position: center;"></div>
+                            <div class="project-info">
+                                <h3>Expense Tracker Pro</h3>
+                                <p>A modern expense tracking application with real-time updates, data visualization, and intuitive user interface for managing personal finances.</p>
+                                <div class="tech-stack">
+                                    <span>React</span>
+                                    <span>Convex</span>
+                                    <span>Tailwind CSS</span>
+                                    <span>Chart.js</span>
+                                </div>
+                                <div class="project-metrics">
+                                    <span>Real-time Updates</span>
+                                    <span>Responsive Design</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://neat-crane-172.convex.app/" target="_blank" class="btn">Live Demo</a>
+                                    <a href="https://github.com/Dhilipkumar-max/Expanse_Tracker/tree/main" target="_blank" class="btn">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">AI & Machine Learning</h3>
+                    <div class="project-grid">
+                        <div class="project-card">
+                            <div class="project-image ai-bg"></div>
+                            <div class="project-info">
+                                <h3>AI-Powered Disease Prediction System</h3>
+                                <p>Machine learning model for early disease diagnosis using symptoms and medical history. Achieved 92% accuracy in disease prediction across 50+ conditions.</p>
+                                <div class="tech-stack">
+                                    <span>TensorFlow</span>
+                                    <span>Scikit-Learn</span>
+                                    <span>React</span>
+                                    <span>Flask</span>
+                                    <span>PostgreSQL</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="btn">View Live</a>
+                                    <a href="#" class="btn">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image ai-bg"></div>
+                            <div class="project-info">
+                                <h3>Smart Agriculture System</h3>
+                                <p>AI-powered farming assistant with soil analysis and plant disease detection. Increased crop yield by 35% through optimized farming practices.</p>
+                                <div class="tech-stack">
+                                    <span>TensorFlow</span>
+                                    <span>React Native</span>
+                                    <span>Node.js</span>
+                                    <span>Firebase</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="btn">View Live</a>
+                                    <a href="#" class="btn">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image ai-bg"></div>
+                            <div class="project-info">
+                                <h3>Women's Safety AI App</h3>
+                                <p>Emergency safety app with voice detection and real-time alerts. Processed 10,000+ voice samples with 95% accuracy in danger detection.</p>
+                                <div class="tech-stack">
+                                    <span>Google Speech API</span>
+                                    <span>NLTK</span>
+                                    <span>React Native</span>
+                                    <span>Firebase</span>
+                                    <span>Twilio</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="btn">View Live</a>
+                                    <a href="#" class="btn">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>your.email@example.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+1 234 567 890</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/Dhilipkumar-max" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/dhilip-kumar-10062532b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+
+    <!-- Add new section after About -->
+    <section id="process" class="process">
+        <h2>How I Work</h2>
+        <div class="process-grid">
+            <div class="process-item">
+                <div class="process-icon">
+                    <i class="fas fa-pencil-ruler"></i>
+                </div>
+                <h3>1. Design</h3>
+                <p>Converting requirements into pixel-perfect, responsive designs</p>
+            </div>
+            <div class="process-item">
+                <div class="process-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>2. Develop</h3>
+                <p>Building scalable frontend architecture with modern frameworks</p>
+            </div>
+            <div class="process-item">
+                <div class="process-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>3. Responsive</h3>
+                <p>Ensuring perfect display across all devices</p>
+            </div>
+            <div class="process-item">
+                <div class="process-icon">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <h3>4. Optimize</h3>
+                <p>Performance optimization for the best user experience</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Update Projects section -->
+    <section id="projects" class="projects">
+        <h2>Frontend Projects</h2>
+        <div class="project-categories">
+            <div class="category">
+                <h3 class="category-title">Web Applications</h3>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-image"></div>
+                        <div class="project-info">
+                            <h3>Modern E-commerce Platform</h3>
+                            <p>A fully responsive e-commerce platform with advanced filtering, real-time cart updates, and seamless checkout experience.</p>
+                            <div class="tech-stack">
+                                <span>React</span>
+                                <span>Redux Toolkit</span>
+                                <span>Styled Components</span>
+                                <span>Stripe</span>
+                            </div>
+                            <div class="project-metrics">
+                                <span>98% Lighthouse Score</span>
+                                <span>2s Load Time</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn">Live Demo</a>
+                                <a href="#" class="btn">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="project-card">
+                        <div class="project-image" style="background-image: url('https://i.postimg.cc/rwx9p1sr/image.png'); background-size: cover; background-position: center;"></div>
+                        <div class="project-info">
+                            <h3>Floral Globe Elegance</h3>
+                            <p>A beautiful and elegant e-commerce platform for floral arrangements with modern design and seamless user experience.</p>
+                            <div class="tech-stack">
+                                <span>React</span>
+                                <span>Tailwind CSS</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="project-metrics">
+                                <span>Responsive Design</span>
+                                <span>Modern UI/UX</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://floral-globe-elegance.lovable.app/" target="_blank" class="btn">Live Demo</a>
+                                <a href="https://github.com/Dhilipkumar-max/floral-globe-elegance" target="_blank" class="btn">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="project-card">
+                        <div class="project-image" style="background-image: url('https://i.postimg.cc/FKCxX5jp/image.png'); background-size: cover; background-position: center;"></div>
+                        <div class="project-info">
+                            <h3>Expense Tracker Pro</h3>
+                            <p>A modern expense tracking application with real-time updates, data visualization, and intuitive user interface for managing personal finances.</p>
+                            <div class="tech-stack">
+                                <span>React</span>
+                                <span>Convex</span>
+                                <span>Tailwind CSS</span>
+                                <span>Chart.js</span>
+                            </div>
+                            <div class="project-metrics">
+                                <span>Real-time Updates</span>
+                                <span>Responsive Design</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://neat-crane-172.convex.app/" target="_blank" class="btn">Live Demo</a>
+                                <a href="https://github.com/Dhilipkumar-max/Expanse_Tracker/tree/main" target="_blank" class="btn">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h3 class="category-title">UI Components</h3>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-image"></div>
+                        <div class="project-info">
+                            <h3>Component Library</h3>
+                            <p>Custom React component library with 30+ reusable components, animations, and theme support.</p>
+                            <div class="tech-stack">
+                                <span>React</span>
+                                <span>Storybook</span>
+                                <span>Jest</span>
+                                <span>CSS-in-JS</span>
+                            </div>
+                            <div class="project-metrics">
+                                <span>100% Test Coverage</span>
+                                <span>5KB Gzipped</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn">Documentation</a>
+                                <a href="#" class="btn">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image"></div>
+                        <div class="project-info">
+                            <h3>Animation Library</h3>
+                            <p>Lightweight animation library for creating smooth, performant web animations.</p>
+                            <div class="tech-stack">
+                                <span>JavaScript</span>
+                                <span>GSAP</span>
+                                <span>CSS Animations</span>
+                            </div>
+                            <div class="project-metrics">
+                                <span>60FPS Animations</span>
+                                <span>3KB Bundle</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn">Demo</a>
+                                <a href="#" class="btn">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
