@@ -138,88 +138,113 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Intersection Observer for Fade-in Animations
+// ========== SMOOTH SCROLL ANIMATIONS - SAME AS HOME ==========
 const observerOptions = {
-    threshold: 0.1
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
 };
 
-const fadeObserver = new IntersectionObserver((entries) => {
+// Main scroll observer for sections
+const mainScrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
+            console.log('Animating section:', entry.target.id);
+            
+            // Add animate class to section
+            entry.target.classList.add('animate-in');
+            
+            // Animate all direct children
+            const children = entry.target.querySelectorAll('h2, .section-description, .about-text, .about-stats, .skills-container, .certifications-container, .ai-grid, .metrics-container, .project-categories, .achievements, .contact-content');
+            children.forEach(child => {
+                child.classList.add('animate-in');
+            });
+            
+            // Animate all cards and items
+            const items = entry.target.querySelectorAll('.achievement, .skill-category, .project-card, .certification-card, .ai-category, .metric, .stat, .category');
+            items.forEach(item => {
+                item.classList.add('animate-in');
+            });
+            
+            // Animate paragraphs
+            const paragraphs = entry.target.querySelectorAll('p');
+            paragraphs.forEach(p => {
+                p.classList.add('animate-in');
+            });
+            
+            console.log('Animated', items.length, 'items');
+            
+            mainScrollObserver.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Observe all sections
-document.querySelectorAll('section').forEach(section => {
-    fadeObserver.observe(section);
+// Observe all sections except home
+console.log('Setting up scroll observers...');
+const sections = document.querySelectorAll('section:not(#home)');
+console.log('Found', sections.length, 'sections to observe');
+
+sections.forEach(section => {
+    console.log('Observing section:', section.id || section.className);
+    mainScrollObserver.observe(section);
 });
 
-// Add CSS for fade-in animation
-const fadeStyle = document.createElement('style');
-fadeStyle.textContent = `
-    section {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-
-    section.fade-in {
-        opacity: 1;
-        transform: translateY(0);
-    }
-`;
-document.head.appendChild(fadeStyle);
+// Test: Make sure CSS is loaded
+console.log('Animation CSS loaded from styles.css');
 
 // Skills Section Enhancement
 const skillsData = {
+    mlDl: {
+        title: "ML/DL & Computer Vision",
+        description: "Deep Learning & CV Expertise",
+        skills: [
+            { name: "CNNs & Transfer Learning", level: 90, description: "ResNet-50, EfficientNet-B0/B3" },
+            { name: "TensorFlow & Keras", level: 90, description: "Production ML models" },
+            { name: "PyTorch", level: 75, description: "Learning & experimentation" },
+            { name: "OpenCV", level: 88, description: "Real-time CV pipelines" },
+            { name: "Image Classification", level: 90, description: "Disease detection, fire detection" },
+            { name: "Data Augmentation", level: 85, description: "CLAHE, noise filtering" }
+        ]
+    },
     coreProgramming: {
-        title: "Core Programming Languages",
-        description: "Google/Microsoft Tier Technologies",
+        title: "Programming Languages",
+        description: "Production-Ready Development",
         skills: [
-            { name: "Python", level: 90, description: "AI/ML, scripting" },
-            { name: "Java", level: 85, description: "Backend systems" },
-            { name: "C++", level: 80, description: "Low-latency systems" },
-            { name: "JavaScript/TypeScript", level: 88, description: "Frontend" },
-            { name: "Go", level: 75, description: "Cloud services, Kubernetes" }
+            { name: "Python", level: 95, description: "ML/DL, scripting, automation" },
+            { name: "JavaScript", level: 85, description: "React, Node.js" },
+            { name: "C", level: 80, description: "System programming" },
+            { name: "Java/Dart", level: 70, description: "Learning Flutter" }
         ]
     },
-    cloudDevOps: {
-        title: "Cloud & DevOps",
-        description: "AWS/GCP/Azure Experience",
+    frameworks: {
+        title: "Frameworks & Tools",
+        description: "Full-Stack & ML Development",
         skills: [
-            { name: "AWS", level: 85, description: "Lambda, EC2, S3, DynamoDB" },
-            { name: "Google Cloud", level: 80, description: "BigQuery, Vertex AI" },
-            { name: "Azure", level: 75, description: "Functions, Cosmos DB" },
-            { name: "DevOps", level: 88, description: "Docker, K8s, Terraform" }
+            { name: "scikit-learn", level: 88, description: "ML algorithms" },
+            { name: "NumPy & Pandas", level: 90, description: "Data preprocessing" },
+            { name: "Flask/Django", level: 85, description: "ML API deployment" },
+            { name: "React & Node.js", level: 85, description: "Full-stack web apps" }
         ]
     },
-    aiml: {
-        title: "AI/ML & Data Science",
-        description: "For AI roles at Google/Microsoft",
+    mlops: {
+        title: "MLOps & DevOps",
+        description: "Production ML Deployment",
         skills: [
-            { name: "TensorFlow/PyTorch", level: 85, description: "Deep Learning" },
-            { name: "LLMs", level: 80, description: "OpenAI API, LangChain" },
-            { name: "Data Tools", level: 90, description: "Pandas, NumPy, Spark" },
-            { name: "NLP", level: 85, description: "BERT, GPT, Hugging Face" }
+            { name: "Git/GitHub", level: 90, description: "Version control" },
+            { name: "Docker", level: 70, description: "Containerization (beginner)" },
+            { name: "CI/CD", level: 80, description: "Automated pipelines" },
+            { name: "REST APIs", level: 88, description: "ML model serving" },
+            { name: "PyTest/Jest", level: 85, description: "95%+ test coverage" }
         ]
     },
-    webDev: {
-        title: "Web Development",
-        description: "Frontend/Full-Stack",
+    evaluation: {
+        title: "Model Evaluation & Analysis",
+        description: "Performance Metrics & Optimization",
         skills: [
-            { name: "Frontend", level: 90, description: "React, Next.js, Angular" },
-            { name: "Backend", level: 85, description: "Node.js, Django, Flask" },
-            { name: "APIs", level: 88, description: "REST, GraphQL, gRPC" }
-        ]
-    },
-    databases: {
-        title: "Databases",
-        description: "SQL & NoSQL Solutions",
-        skills: [
-            { name: "SQL", level: 90, description: "PostgreSQL, MySQL" },
-            { name: "NoSQL", level: 85, description: "MongoDB, Firebase, Redis" }
+            { name: "F1-score & ROC-AUC", level: 90, description: "Model evaluation" },
+            { name: "Precision/Recall", level: 90, description: "Classification metrics" },
+            { name: "Confusion Matrix", level: 88, description: "Error analysis" },
+            { name: "EDA", level: 85, description: "Exploratory data analysis" },
+            { name: "A/B Testing", level: 80, description: "Model comparison" }
         ]
     }
 };
@@ -272,10 +297,9 @@ function createSkillBars() {
 
 // Add certifications section
 const certificationsData = [
-    { category: "Cloud", items: ["AWS Certified", "Google Cloud Professional"] },
-    { category: "AI/ML", items: ["TensorFlow Developer Certificate", "AWS ML"] },
-    { category: "DevOps", items: ["CKA (Kubernetes)", "Terraform Associate"] },
-    { category: "Web", items: ["Google Mobile Web Specialist", "Next.js Certified"] }
+    { category: "AICTE Internships", items: ["Microsoft AI Intern (Mar-Apr 2024)", "EduNet-Shell Green AI Intern (Apr-Jun 2024)"] },
+    { category: "AI/ML Projects", items: ["Disease Detection System (85% accuracy)", "Real-Time Fire Detection (90% accuracy)"] },
+    { category: "Technical Skills", items: ["CSC Course: MySQL, Python, C, MS Office (2022-2024)", "AI Centre Fire Safety Project (2024)"] }
 ];
 
 function createCertificationsSection() {
@@ -404,7 +428,7 @@ skillStyles.textContent = `
     }
 
     .cert-list li::before {
-        content: '🏆';
+        content: 'ðŸ†';
         position: absolute;
         left: 0;
         opacity: 0.8;
@@ -493,9 +517,27 @@ function initProjectCategories() {
     });
 }
 
+// Animate skills on scroll
+function animateSkillsOnScroll() {
+    const skillsSection = document.querySelector('#skills');
+    if (!skillsSection) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-skills');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    observer.observe(skillsSection);
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
     initProjectCategories();
+    animateSkillsOnScroll();
 });
 
 // Theme Toggle
@@ -510,7 +552,7 @@ themeToggle.addEventListener('click', () => {
 });
 
 // Typing Animation
-const texts = ['AI Developer', 'Web Developer', 'Problem Solver'];
+const texts = ['Machine Learning Engineer', 'Deep Learning Specialist', 'Computer Vision Expert', 'AI Developer'];
 let textIndex = 0;
 let charIndex = 0;
 const typingText = document.querySelector('.typing-text');
@@ -576,3 +618,172 @@ function animateValue(obj, start, end, duration) {
     };
     window.requestAnimationFrame(step);
 } 
+
+// ========== ANIMATION FOR PROJECT CARDS (ALL AT ONCE) ==========
+const staggerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const cards = entry.target.querySelectorAll('.project-card');
+            cards.forEach((card) => {
+                card.classList.add('animate-in');
+            });
+            staggerObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+// Observe project grids
+document.querySelectorAll('.project-grid').forEach(grid => {
+    staggerObserver.observe(grid);
+});
+
+// ========== ANIMATION FOR SKILLS (ALL AT ONCE) ==========
+const skillsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const categories = entry.target.querySelectorAll('.skill-category');
+            categories.forEach((category) => {
+                category.classList.add('animate-in');
+            });
+            skillsObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+// Observe skills container
+const skillsContainer = document.querySelector('.skills-container');
+if (skillsContainer) {
+    skillsObserver.observe(skillsContainer);
+}
+
+// ========== ANIMATION FOR ACHIEVEMENTS (ALL AT ONCE) ==========
+const achievementsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const achievements = entry.target.querySelectorAll('.achievement');
+            achievements.forEach((achievement) => {
+                achievement.classList.add('animate-in');
+            });
+            achievementsObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+// Observe achievements container
+const achievementsContainer = document.querySelector('.achievements');
+if (achievementsContainer) {
+    achievementsObserver.observe(achievementsContainer);
+}
+
+// ========== SMOOTH REVEAL FOR CATEGORY SECTIONS ==========
+const categoryObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            
+            // Animate category title
+            const title = entry.target.querySelector('.category-title');
+            if (title) {
+                title.style.opacity = '1';
+                title.style.transform = 'translateX(0)';
+            }
+            
+            // Animate all project cards at once
+            const cards = entry.target.querySelectorAll('.project-card');
+            cards.forEach((card) => {
+                card.classList.add('animate-in');
+            });
+            
+            categoryObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+// Observe all categories
+document.querySelectorAll('.category').forEach(category => {
+    categoryObserver.observe(category);
+    
+    // Set initial state for category title
+    const title = category.querySelector('.category-title');
+    if (title) {
+        title.style.opacity = '0';
+        title.style.transform = 'translateX(-30px)';
+        title.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    }
+});
+
+// ========== SCROLL PROGRESS INDICATOR ==========
+const createScrollProgress = () => {
+    const progressBar = document.createElement('div');
+    progressBar.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        z-index: 9999;
+        transition: width 0.1s ease;
+        box-shadow: 0 0 10px var(--primary-color);
+    `;
+    document.body.appendChild(progressBar);
+    
+    window.addEventListener('scroll', () => {
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (window.scrollY / windowHeight) * 100;
+        progressBar.style.width = scrolled + '%';
+    }, { passive: true });
+};
+
+createScrollProgress();
+
+// ========== SMOOTH SCROLL TO TOP ==========
+const createScrollToTop = () => {
+    const scrollBtn = document.createElement('button');
+    scrollBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    scrollBtn.style.cssText = `
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        color: var(--secondary-color);
+        border: none;
+        cursor: pointer;
+        opacity: 0;
+        transform: scale(0);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0 5px 20px rgba(0, 255, 136, 0.4);
+    `;
+    
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            scrollBtn.style.opacity = '1';
+            scrollBtn.style.transform = 'scale(1)';
+        } else {
+            scrollBtn.style.opacity = '0';
+            scrollBtn.style.transform = 'scale(0)';
+        }
+    }, { passive: true });
+    
+    scrollBtn.addEventListener('mouseenter', () => {
+        scrollBtn.style.transform = 'scale(1.1)';
+    });
+    
+    scrollBtn.addEventListener('mouseleave', () => {
+        scrollBtn.style.transform = 'scale(1)';
+    });
+    
+    document.body.appendChild(scrollBtn);
+};
+
+createScrollToTop();

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0a192f;
+            color: #e6f1ff;
+            font-family: Arial, sans-serif;
+        }
+        
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 2rem;
+        }
+        
+        .box {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #00ff88, #64ffda);
+            margin: 1rem;
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .box.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        h2 {
+            font-size: 3rem;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        h2.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <section id="home">
+        <h2 style="opacity: 1; transform: translateY(0);">Home Section</h2>
+        <div class="box" style="opacity: 1; transform: translateY(0);"></div>
+    </section>
+    
+    <section id="section1">
+        <h2>Section 1</h2>
+        <div class="box"></div>
+        <div class="box"></div>
+    </section>
+    
+    <section id="section2">
+        <h2>Section 2</h2>
+        <div class="box"></div>
+        <div class="box"></div>
+    </section>
+    
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const section = entry.target;
+                    const h2 = section.querySelector('h2');
+                    const boxes = section.querySelectorAll('.box');
+                    
+                    if (h2) h2.classList.add('animate-in');
+                    boxes.forEach(box => box.classList.add('animate-in'));
+                    
+                    observer.unobserve(section);
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        document.querySelectorAll('section:not(#home)').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
