@@ -149,7 +149,7 @@
                     </div>
                     <div class="cta-buttons">
                         <a href="#projects" class="btn primary pulse" aria-label="View My Work">View My Work</a>
-                        <a href="2025-06-14 19-01-25.pdf" class="btn secondary" download="Dhilip_Kumar_Resume.pdf"
+                        <a href="Resume (11).pdf" class="btn secondary" download="Dhilip_Kumar_Resume.pdf"
                             aria-label="Download Resume">Download Resume</a>
                     </div>
                     <div class="hero-social-links"
@@ -946,17 +946,18 @@
         <section id="contact" class="contact">
             <h2>Get In Touch</h2>
             <div class="contact-content">
-                <form class="contact-form">
+                <form class="contact-form" id="contactForm">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" name="name" id="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" name="email" id="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" required></textarea>
+                        <textarea name="message" id="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn primary">Send Message</button>
+                    <button type="submit" class="btn primary" id="submitBtn">Send Message</button>
+                    <div id="formStatus" style="margin-top: 1rem; text-align: center; display: none;"></div>
                 </form>
                 <div class="contact-info">
                     <div class="info-item">

@@ -86,28 +86,114 @@ document.addEventListener('mousemove', (e) => {
     });
 });
 
-// Form Submission
-const contactForm = document.querySelector('.contact-form');
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Add loading state
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
+// ========== CONTACT FORM FUNCTIONALITY ==========
+const contactForm = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const formStatus = document.getElementById('formStatus');
 
-    // Simulate form submission (replace with actual form submission)
-    setTimeout(() => {
-        submitBtn.textContent = 'Message Sent!';
-        contactForm.reset();
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
         
-        // Reset button after 3 seconds
+        // Get form data
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+        };
+        
+        // Show loading state
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        formStatus.style.display = 'none';
+        
+        try {
+            // Option 1: Send email using mailto (opens email client)
+            const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
+            const body = encodeURIComponent(
+                `Name: ${formData.name}\n` +
+                `Email: ${formData.email}\n\n` +
+                `Message:\n${formData.message}`
+            );
+            
+            // Open email client
+            window.location.href = `mailto:rajdhilipkumar20@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Show success message
+            setTimeout(() => {
+                submitBtn.textContent = 'Message Sent!';
+                submitBtn.style.background = 'var(--primary-color)';
+                formStatus.style.display = 'block';
+                formStatus.style.color = 'var(--primary-color)';
+                formStatus.textContent = '✓ Your email client has been opened. Please send the email.';
+                contactForm.reset();
+                
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = '';
+                    formStatus.style.display = 'none';
+                }, 3000);
+            }, 500);
+            
+        } catch (error) {
+            console.error('Error:', error);
+            submitBtn.textContent = 'Error!';
+            submitBtn.style.background = '#ff4d4d';
+            formStatus.style.display = 'block';
+            formStatus.style.color = '#ff4d4d';
+            formStatus.textContent = '✗ Something went wrong. Please try again or email directly.';
+            
+            // Reset button after 3 seconds
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                submitBtn.style.background = '';
+            }, 3000);
+        }
+    });
+}
+
+// Alternative: Copy to clipboard functionality
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        console.log('Copied to clipboard:', text);
+    }).catch(err => {
+        console.error('Failed to copy:', err);
+    });
+}
+
+// Add click to copy for email and phone
+document.querySelectorAll('.info-item').forEach(item => {
+    item.style.cursor = 'pointer';
+    item.addEventListener('click', function() {
+        const text = this.querySelector('p').textContent;
+        copyToClipboard(text);
+        
+        // Show copied notification
+        const notification = document.createElement('div');
+        notification.textContent = 'Copied!';
+        notification.style.cssText = `
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            font-weight: bold;
+            z-index: 10000;
+            animation: fadeInOut 2s ease;
+        `;
+        document.body.appendChild(notification);
+        
         setTimeout(() => {
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }, 3000);
-    }, 1500);
+            notification.remove();
+        }, 2000);
+    });
 });
 
 // Add CSS animation for typing effect
