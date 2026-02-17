@@ -9,7 +9,7 @@ import * as THREE from 'three';
 export function Astronaut(props: any) {
     const group = useRef<THREE.Group>(null!);
     const { nodes, materials, animations } = useGLTF(
-        "/models/tenhun_falling_spaceman_fanart.glb"
+        "/Portfolio/models/tenhun_falling_spaceman_fanart.glb"
     ) as any;
     const { actions } = useAnimations(animations, group);
 
@@ -128,4 +128,4 @@ export function Astronaut(props: any) {
     );
 }
 
-useGLTF.preload("/models/tenhun_falling_spaceman_fanart.glb");
+useGLTF.preload("/Portfolio/models/tenhun_falling_spaceman_fanart.glb");
