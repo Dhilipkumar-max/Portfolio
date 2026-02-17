@@ -7,9 +7,11 @@ import { useFrame } from "@react-three/fiber";
 import * as THREE from 'three';
 
 export function Astronaut(props: any) {
+    const isProd = process.env.NODE_ENV === 'production';
+    const basePath = isProd ? '/Portfolio' : '';
     const group = useRef<THREE.Group>(null!);
     const { nodes, materials, animations } = useGLTF(
-        "/Portfolio/models/tenhun_falling_spaceman_fanart.glb"
+        `${basePath}/models/tenhun_falling_spaceman_fanart.glb`
     ) as any;
     const { actions } = useAnimations(animations, group);
 
@@ -128,4 +130,6 @@ export function Astronaut(props: any) {
     );
 }
 
-useGLTF.preload("/Portfolio/models/tenhun_falling_spaceman_fanart.glb");
+const isProdStatic = typeof window !== 'undefined' ? (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') : process.env.NODE_ENV === 'production';
+const staticBasePath = isProdStatic ? '/Portfolio' : '';
+useGLTF.preload(`${staticBasePath}/models/tenhun_falling_spaceman_fanart.glb`);
