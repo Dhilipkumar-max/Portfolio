@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 33% 3%;
+    --foreground: 0 0% 100%;
+    --card: 240 27% 11%;
+    --card-foreground: 0 0% 100%;
+    --popover: 240 27% 11%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 244 100% 69%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 27% 11%;
+    --secondary-foreground: 240 16% 77%;
+    --muted: 243 21% 21%;
+    --muted-foreground: 240 12% 60%;
+    --accent: 193 100% 50%;
+    --accent-foreground: 240 33% 3%;
+    --destructive: 350 100% 69%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 100% / 0.1;
+    --input: 0 0% 100% / 0.1;
+    --ring: 244 100% 69%;
+    --chart-1: 244 100% 69%;
+    --chart-2: 193 100% 50%;
+    --chart-3: 350 100% 69%;
+    --chart-4: 27 100% 63%;
+    --chart-5: 240 16% 77%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .c-space {
+    @apply sm:px-10 px-5 lg:px-16;
+  }
+}
+
+/* Custom gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #6C63FF 0%, #00D4FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, #FF6584 0%, #FF8C42 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated gradient background */
+.animated-gradient-bg {
+  background: linear-gradient(135deg, #0A0A0F 0%, #1A1A2E 25%, #252545 50%, #1A1A2E 75%, #0A0A0F 100%);
+  background-size: 400% 400%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes gradient-shift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Glow button */
+.glow-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-button::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, #6C63FF 0%, #00D4FF 100%);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-button:hover::before {
+  opacity: 1;
+}
+
+/* Neon glow effect */
+.neon-glow {
+  box-shadow: 0 0 20px rgba(108, 99, 255, 0.3), 0 0 40px rgba(108, 99, 255, 0.1);
+}
+
+.neon-glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(0, 212, 255, 0.1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6C63FF;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00D4FF;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Hide Spline branding and watermark */
+spline-viewer {
+  --spline-url-bar: none !important;
+}
+
+spline-viewer::part(click-to-load) {
+  display: none !important;
+}
+
+/* Hide built with spline button */
+spline-viewer::part(spline-ui-button),
+spline-viewer::part(spline-watermark),
+spline-viewer::part(logo) {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Hide any spline branding elements */
+spline-viewer>* {
+  pointer-events: auto;
+}
+
+/* Target Spline's internal UI elements */
+spline-viewer::after {
+  display: none !important;
+}
