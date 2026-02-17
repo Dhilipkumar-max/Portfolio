@@ -10,7 +10,7 @@ const ParallaxBackground = () => {
                 <div
                     className="absolute inset-0 w-full h-screen -z-50"
                     style={{
-                        backgroundImage: "url('/assets/sky.jpg')",
+                        backgroundImage: "url('/Portfolio/assets/sky.jpg')",
                         backgroundPosition: "bottom",
                         backgroundSize: "cover",
                     }}
@@ -19,7 +19,7 @@ const ParallaxBackground = () => {
                 <div
                     className="absolute inset-0 -z-40"
                     style={{
-                        backgroundImage: "url('/assets/mountain-3.png')",
+                        backgroundImage: "url('/Portfolio/assets/mountain-3.png')",
                         backgroundPosition: "bottom",
                         backgroundSize: "cover",
                     }}
@@ -28,7 +28,7 @@ const ParallaxBackground = () => {
                 <div
                     className="absolute inset-0 -z-30"
                     style={{
-                        backgroundImage: "url('/assets/planets.png')",
+                        backgroundImage: "url('/Portfolio/assets/planets.png')",
                         backgroundPosition: "bottom",
                         backgroundSize: "cover",
                     }}
@@ -37,7 +37,7 @@ const ParallaxBackground = () => {
                 <div
                     className="absolute inset-0 -z-20"
                     style={{
-                        backgroundImage: "url('/assets/mountain-2.png')",
+                        backgroundImage: "url('/Portfolio/assets/mountain-2.png')",
                         backgroundPosition: "bottom",
                         backgroundSize: "cover",
                     }}
@@ -46,7 +46,7 @@ const ParallaxBackground = () => {
                 <div
                     className="absolute inset-0 -z-10"
                     style={{
-                        backgroundImage: "url('/assets/mountain-1.png')",
+                        backgroundImage: "url('/Portfolio/assets/mountain-1.png')",
                         backgroundPosition: "bottom",
                         backgroundSize: "cover",
                     }}
